@@ -1,0 +1,41 @@
+test_csv_formula_injection_is_neutralized (test_app.SyncTests.test_csv_formula_injection_is_neutralized) ... [2026-09-28T07:29:21+00:00] "GET /api/export.csv HTTP/1.1" 200 -
+ok
+test_duplicate_conflicts_and_missing_mapping_block_commit (test_app.SyncTests.test_duplicate_conflicts_and_missing_mapping_block_commit) ... ok
+test_empty_source_does_not_delete_existing_records (test_app.SyncTests.test_empty_source_does_not_delete_existing_records) ... [2026-09-28T07:29:21+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "POST /api/preview HTTP/1.1" 200 -
+ok
+test_pagination_loop_aborts (test_app.SyncTests.test_pagination_loop_aborts) ... ok
+test_real_paginated_fetch_preview_commit_and_exports (test_app.SyncTests.test_real_paginated_fetch_preview_commit_and_exports) ... [2026-09-28T07:29:21+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "POST /api/preview HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "POST /api/commit HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "GET /api/export.json HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "GET /api/export.csv HTTP/1.1" 200 -
+ok
+test_remote_opt_in_and_no_cross_origin_write (test_app.SyncTests.test_remote_opt_in_and_no_cross_origin_write) ... [2026-09-28T07:29:21+00:00] "POST /api/preview HTTP/1.1" 403 -
+[2026-09-28T07:29:21+00:00] "GET /api/state HTTP/1.1" 403 -
+ok
+test_restore_is_reversible_and_revision_guarded (test_app.SyncTests.test_restore_is_reversible_and_revision_guarded) ... [2026-09-28T07:29:21+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:21+00:00] "POST /api/preview HTTP/1.1" 200 -
+ok
+test_stale_preview_cannot_overwrite_changed_dataset (test_app.SyncTests.test_stale_preview_cannot_overwrite_changed_dataset) ... [2026-09-28T07:29:22+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "POST /api/preview HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "POST /api/preview HTTP/1.1" 200 -
+ok
+test_updates_require_explicit_approval (test_app.SyncTests.test_updates_require_explicit_approval) ... [2026-09-28T07:29:22+00:00] "GET /api/fixture?page=1&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=2&edition=1 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "POST /api/preview HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=1&edition=2 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "GET /api/fixture?page=2&edition=2 HTTP/1.1" 200 -
+[2026-09-28T07:29:22+00:00] "POST /api/preview HTTP/1.1" 200 -
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.642s
+
+OK

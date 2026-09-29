@@ -1,0 +1,26 @@
+{
+  "folder": "11_REST_Sync_Hub",
+  "name": "SyncHarbor",
+  "title": "Reviewable REST Data Synchronization",
+  "category": "API & System Integration",
+  "problem": "Manual data transfers make changes hard to inspect and recover from when paginated API records differ from the saved dataset.",
+  "solution": "A working REST-to-SQLite pipeline with dot-path mapping, review before commit, explicit update approval and reversible snapshots.",
+  "features": [
+    "Real paginated HTTP fetches with field mapping",
+    "Add/change/conflict review and optimistic revision checks",
+    "Atomic SQLite commits and recovery snapshots",
+    "CSV/JSON export with spreadsheet-safe CSV values"
+  ],
+  "verification": "9 automated tests passed, including actual loopback HTTP pagination, approved updates, stale-preview rejection, exports and reversible restores.",
+  "limitations": "New independent project; fictional verification data. Single-user local service; documented items/next JSON envelope. Remote endpoints require explicit opt-in; OAuth, scheduled sync and public deployment are not implemented.",
+  "flow": "HTTP JSON source \u2192 Pagination & mapping \u2192 Addition/change review \u2192 Explicit commit \u2192 SQLite snapshot \u2192 CSV/JSON export",
+  "port": 8111,
+  "screenshots": [
+    "01-workspace.png",
+    "02-result.png"
+  ],
+  "captions": [
+    "Two-page HTTP source and field mapping in the real SyncHarbor workspace.",
+    "A revised source produces one addition and two modifications against saved records, ready for explicit review before commit."
+  ]
+}
