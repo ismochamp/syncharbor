@@ -104,14 +104,6 @@ python3 -m unittest -v test_app.py
 
 The tests bind a temporary loopback HTTP server and use temporary databases. They never modify `data/`. See `TEST_RESULTS.md` and the captured `test-run.txt` for the actual local run.
 
-## Portfolio files
-
-- `CASE_STUDY.md`: problem, implementation, evidence and scope.
-- `MALT_COPY.md`: ready-to-use title and client-focused portfolio description.
-- `portfolio_metadata.json`: machine-readable catalogue details.
-- `screenshots/`: screenshots captured from the running application.
-- `PORTFOLIO.pdf`: packaged case study, generated during portfolio assembly.
-
 No videos are included.
 
 ## License

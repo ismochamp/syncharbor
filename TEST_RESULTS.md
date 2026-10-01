@@ -19,4 +19,3 @@
 | Spreadsheet-safe exports | Formula-like source values are neutralized in CSV |
 | Non-destructive import | Empty source does not delete saved records |
 
-Tests are direct implementation/integration checks rather than estimates of client benefits. Browser screenshots are captured separately during final portfolio assembly. Remote providers, cloud deployment, production load and a Windows environment have not been tested.
